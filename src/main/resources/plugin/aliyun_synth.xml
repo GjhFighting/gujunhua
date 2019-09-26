@@ -1,0 +1,11 @@
+<Document>
+  <tts
+    keyId = "LTAIXnPCWqTUkMxG"
+    keySecret = "pT26d0UbCa2FutEsEPRwwQZlbfRmEg" 
+    ttsurl = "https://nls-gateway.cn-shanghai.aliyuncs.com/stream/v1/tts" 
+    appkey = "STR6wqIQL81FoCnJ" 
+    sampleRate = "8000" 
+    format = "pcm" 
+  />
+</Document>
+

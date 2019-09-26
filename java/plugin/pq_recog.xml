@@ -1,0 +1,32 @@
+<Document>
+    <!--需要配置参数:filename,url,host
+	 asr解析语音存放目录    asr访问地址    主机地址-->
+    <asr filename = "/root/asr.wav"  url = "http://1.202.136.28:8086/QianYuSrv/uploader?aaa=1" host= "1.202.136.28"/>
+    <!--http头信息-->
+    <httpheads
+    head_str ="------------V2ymHFg03ehbqgZCaKO6jy" 
+    disposition = "Content-Disposition: form-data" 
+    name="/root/asr.wav"
+    opcode="transcribe_audio"
+    sessionid="session:1"
+    tmp_entry_id="2107512132"
+    type="11"
+    time="1528968385149"
+    reqid="485969d2-0c93-42cd-bcd5-4f3c1ccabccb"
+    latitude="-1"
+    location="-1"
+    language="chinese"
+    uId="null"
+    kId="102"
+    aId="TEST-APP-ID"
+    grammarname=""
+    contentId="session:1"
+    sceneId="-1"
+    sr="1"
+    isAddPunct="off"
+    isTransDigit="on"
+    isButterFly="off" 
+	/>
+	<!--识别结果存放目录-->
+    <recog_result filename = "/usr/local/unimrcp/bin/asr.result" />
+    </Document>

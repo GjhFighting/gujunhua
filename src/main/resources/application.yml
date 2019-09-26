@@ -1,0 +1,71 @@
+server:
+  port: 19000
+  servlet:
+   context-path: /cti-caas
+
+spring:
+  application:
+    name: cti-caas
+  redis:
+#    host: 127.0.0.1
+    host: 125.91.33.50
+    port: 6379
+    time: 5000
+    password: 123456
+  jackson:
+    time-zone: GMT+8
+
+    
+    
+  devtools:
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: false
+
+
+
+
+
+#数据源
+datasource:
+  #jdbc-url: jdbc:mysql://120.24.188.97:9992/portal?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+  #username: root
+  #password: admin01
+  jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+  #jdbc-url: jdbc:mysql://125.91.33.50:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+  username: root
+  #password: root
+  password: 124!@$qweQWE
+  driver-class-name: com.mysql.jdbc.Driver
+  pool-name: PortalHikariPool
+  initial-size: 5
+  minimum-idle: 5
+  maximum-pool-size: 50
+  idle-timeout: 30000
+  max-lifetime: 180000
+  connection-timeout: 30000
+  auto-commit: true
+  connection-test-query: SELECT 1
+  #connection-test-query: select 1 from dual
+
+
+
+
+  
+#路径配置: (cas: cas服务器地址, onLogin: 登录成功地址, pcHome: pc端首页地址)
+path:
+  cas:  http://120.24.188.97:9180
+  cas-login: ${path.cas}/login
+  cas-logout: ${path.cas}/logout?service=${path.server}
+#  server: http://127.0.0.1:19000/cti-caas
+#  html: http://127.0.0.1:19001/html/index.html
+  server: http://125.91.33.50:19000/cti-caas
+  html: http://125.91.33.50:19001/html/index.html
+
+  
+#认证平台api认证
+portal-api:
+  path: http://120.24.188.97:9182
+  user:
+    name: portal
+    password: qlisvpt

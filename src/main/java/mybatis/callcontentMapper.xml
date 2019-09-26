@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 关联Mapper接口 -->
+<mapper namespace="com.gkx.cti.caas.mapper.CallContentMapper">
+
+<select id="getHistoryContentList" resultType="com.gkx.cti.caas.pojo.CallContent">
+SELECT
+	*
+FROM
+	callcontent
+WHERE
+	status ='start'
+AND
+	(session_id like #{search} OR phonenumber LIKE #{search} or #{search} = '') 
+LIMIT
+	#{first},#{end}
+</select>
+
+<select id="getContentBySessionid" parameterType="java.lang.String" resultType="com.gkx.cti.caas.pojo.CallContent">
+SELECT
+	*
+FROM
+	callcontent
+WHERE
+	session_id=#{session_id}
+
+</select>
+
+
+<select id="getContentTotal" resultType="int">
+SELECT
+	count(*)
+FROM
+	callcontent
+WHERE
+	status ='start'
+AND
+	(session_id like #{search} OR phonenumber LIKE #{search} or #{search} = '') 
+</select>
+
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 关联Mapper接口 -->
+<mapper namespace="com.gkx.cti.caas.mapper.ServerInfoMapper">
+
+
+
+<!-- 查询数据信息 -->
+<select id="getServerInfo" resultType="com.gkx.cti.caas.pojo.Server">
+
+		select
+			*
+		from
+			server
+			
+<!--  select * from server  -->
+</select>
+
+<insert id="putinfoDB" parameterType="com.gkx.cti.caas.pojo.Server">
+	INSERT INTO server(
+	    name,serverip,plugin,rootname,pwd
+	    )VALUES (
+	      #{name},
+	      #{serverip},
+	      #{plugin},
+	      #{rootname},
+	      #{pwd}
+	    )ON DUPLICATE KEY UPDATE 
+		plugin = #{plugin},
+		name = #{name},
+		rootname = #{rootname},
+		pwd = #{pwd}
+</insert>
+
+
+<select id="getserverbyname" resultType="com.gkx.cti.caas.pojo.Server">
+	select
+		*
+	from
+		server
+	where
+		name = #{name}
+ 
+</select>
+ 
+ <select id="get_plugin_which" parameterType="java.lang.String" resultType="java.lang.String">
+ 	select
+ 		plugin_value
+ 	from
+ 		plugin_table
+ 	where
+ 		server_id = '${serverip}'	
+ 	and
+ 		plugin = 'unimrcp_server'
+ </select>
+ 
+<select id="getServerBySeverIp" resultType="com.gkx.cti.caas.pojo.Server">
+	select
+		*
+	from
+		server
+	where
+		serverip = #{serverip}
+ </select>
+
+</mapper>

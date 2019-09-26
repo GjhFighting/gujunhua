@@ -1,0 +1,18 @@
+<Document>
+<!--apikey:秘钥账号   secretkey:秘钥密码    apitokenurl:token获取地址
+    apiasrurl:语音识别地址  rate:采样率  format:音频格式,pcm（不压缩）、wav（不压缩，pcm编码）、amr（压缩格式）
+	dev_pid:语言,1536:普通话(支持简单的英文识别)，1537 普通话(纯中文识别),1737 英语,1637 粤语,1837 四川话,1936 普通话远场
+    cuid:用户唯一标识
+	-->
+  <asr
+    apikey = "WeDpe31Azu0s5GaWhc8w75NC"
+    secretkey = "yEkxIvEDvUO7RHYE36TTf4z3ShTGnnzc" 
+    apitokenurl = "https://aip.baidubce.com/oauth/2.0/token" 
+    apiasrurl = "https://vop.baidu.com/server_api" 
+    rate = "8000"  
+    format = "wav" 
+    dev_pid = "1537" 
+    cuid = "1234567C" 
+  />
+</Document>
+

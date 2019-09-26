@@ -1,0 +1,20 @@
+<Document>
+<!--apikey:秘钥账号  secretkey:秘钥密码 apitokenurl:token获取地址 
+    apiurl:语音合成地址 cuid:用户唯一标识 per:基础音库(度小宇=1，度小美=0，度逍遥=3，度丫丫=4)
+	spd:语速，取值0-15,默认为5中语速  pit:音调，取值0-15，默认为5中语调 
+	vol:音量，取值0-15，默认为5中音量  aue:3为mp3格式(默认)； 4为pcm-16k；5为pcm-8k；6为wav（内容同pcm-16k）
+	-->
+  <tts
+    apikey = "WeDpe31Azu0s5GaWhc8w75NC"   
+    secretkey = "yEkxIvEDvUO7RHYE36TTf4z3ShTGnnzc" 
+    apitokenurl = "https://aip.baidubce.com/oauth/2.0/token" 
+    apiurl = "http://tsn.baidu.com/text2audio" 
+    cuid = "1234567C" 
+    per = "0" 
+    spd = "5" 
+    pit = "5"
+    vol = "5"
+    aue = "5" 
+  />
+</Document>
+

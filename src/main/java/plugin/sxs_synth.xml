@@ -1,0 +1,15 @@
+<Document>
+  <!-- filename:tts合成后语音保存路径    host:服务器地址  port:端口
+  username:用户名   localvoice:本地语音标记，支持数字、英文，为 0 时合成语音
+  samplerate:只支持1,默认为8k16bit
+  需要配置参数:filename,host,port
+  -->
+  <file filename = "/usr/local/unimrcp/bin/tts.wav"/>
+  <synth
+  host = "14.29.138.204"
+  port = "8001"
+  username = "dianxin"
+  localvoice = "\0"
+  samplerate = "1"
+  />
+</Document>

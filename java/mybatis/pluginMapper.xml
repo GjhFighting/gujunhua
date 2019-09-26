@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 关联Mapper接口 -->
+<mapper namespace="com.gkx.cti.caas.mapper.PluginMapper">
+
+<!--  if not data exist 
+		insert plugin to mysql by user
+	  else
+	    update data
+-->
+<insert id="savePluginMap" >
+	INSERT INTO plugin_table (
+		server_id,
+		plugin,
+		plugin_value,
+		update_user,
+		update_date
+	)
+	VALUES
+		(
+			#{server_id},
+			#{plugin},
+			#{plugin_value},
+			#{update_user},
+			now()
+		) ON DUPLICATE KEY UPDATE update_user = #{update_user},
+		update_date = now(),
+		plugin_value = #{plugin_value}
+</insert>
+
+ <select id="getFormValue" parameterType="java.lang.String" resultType="java.lang.String">
+	select 
+		plugin_value 
+	from 
+		plugin_table
+	where
+		plugin = #{plugin}
+	and 
+		server_id = #{server_id}
+</select> 
+
+
+</mapper>

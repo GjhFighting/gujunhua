@@ -1,0 +1,16 @@
+<Document>
+    <!--需要修改的参数:都需要-->
+	<!--tts返回的语音合成结果存放的地址-->
+    <file filename = "/usr/local/unimrcp/bin/tts.wav"/>
+    <!--tts合成的参数设置-->
+	<synth
+    host = "1.202.136.28"
+    port = "28084"
+    format = "wav"
+    sample_rate = "16000"
+    volume = "1"
+    speed = "1"
+    pitch = "1"
+    voice_name = "xiaochang"
+    />
+    </Document>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 关联Mapper接口 -->
+<mapper namespace="com.gkx.cti.caas.mapper.TestMapper">
+
+
+
+<!-- 查询数据信息 -->
+<select id="getDate" resultType="com.gkx.cti.caas.pojo.CallContent">
+
+		select
+			*
+		from
+			messages
+		where
+			id=1
+<!--  select * from messages  -->
+</select>
+
+<insert id="spendTextMapper" parameterType="com.gkx.cti.caas.pojo.CallMsg">
+	INSERT INTO content(
+	    msg_id,sender,content,date
+	    )VALUES (
+	      #{msg_id},
+	      #{sender},
+	      #{content},
+	      #{date}
+	    )
+</insert>
+
+<select id="getMsgMapper" resultType="com.gkx.cti.caas.pojo.CallMsg">
+	select
+	*
+	from
+		content
+	where
+		msg_id=123456
+	order by 
+		date
+<!--  查询数据库中的内容  -->
+</select>
+
+
+<!--  if not data exist 
+		insert plugin to mysql by user
+	  else
+	    update data
+-->
+
+<insert id="savePluginMap" >
+	INSERT INTO plugin_table (
+		server_id,
+		plugin,
+		plugin_value,
+		update_user,
+		update_date
+	)
+	VALUES
+		(
+			#{server_id},
+			#{plugin},
+			#{plugin_value},
+			#{update_user},
+			now()
+		) ON DUPLICATE KEY UPDATE update_user = #{update_user},
+		update_date = now(),
+		plugin_value = #{plugin_value}
+</insert>
+
+ <select id="getFormValue"  resultType="java.lang.String">
+	select 
+		plugin_value 
+	from 
+		plugin_table
+	where
+		plugin = #{plugin}	
+	and 
+		server_id = #{server_id}
+</select> 
+
+
+</mapper>

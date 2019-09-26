@@ -1,0 +1,11 @@
+<Document>
+  <asr
+    keyId = "LTAI3mSGiXLzNCzW"
+    keySecret = "ejEYeIC63VYPQX8F0FGuH8M99SIkLE" 
+    asr_url = "http://nls-gateway.cn-shanghai.aliyuncs.com/stream/v1/asr" 
+    appkey = "mx4N3Jp9zOzKbA0Y" 
+    sampleRate = "8000" 
+    format = "wav" 
+  />
+</Document>
+

@@ -1,0 +1,23 @@
+<Document>
+<!-- ip:服务器地址   port:端口 username:用户名 auth:用户密码 dtype:类型 did:上传设备唯一标识
+     rectype:对于语音识别来说该值永为 1  etype:对于语音识别来说该值永为 stream 
+	 samplerate:传入语音格式，支持 1、5： 1：8k16bit
+	                                      5：16k16bit
+	 language:语种，目前只支持 mandarin
+	 modultype:模型类型，目前只支持 modeltype
+	 需要配置的参数:ip , port , did ,samplerate 
+-->
+  <asr
+    ip = "14.29.138.204"
+    port = "8001" 
+    username = "python" 
+    auth = "aaa" 
+    dtype = "bbb" 
+    did = "ccc" 
+    rectype = "1" 
+    etype = "stream" 
+    samplerate = "1" 
+    language = "mandarin"
+    modeltype = "0"
+  />
+</Document>
